@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brain
+  namespace: x32-automation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: brain
+  template:
+    metadata:
+      labels:
+        app: brain
+    spec:
+      containers:
+        - name: brain
+          image: x32-brain:latest # Assumes local build or registry
+          imagePullPolicy: IfNotPresent
+          command: ["python", "src/brain_core.py"]
+          args: ["--broker", "mosquitto", "--config", "/config/x32_map.json"]
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: x32-config
