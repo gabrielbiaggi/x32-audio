@@ -1,0 +1,4 @@
+pyaudio==0.2.14
+python-osc==1.8.3
+paho-mqtt==2.1.0
+numpy==1.26.4

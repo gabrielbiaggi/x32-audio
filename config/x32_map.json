@@ -1,0 +1,41 @@
+{
+    "target_bus": [11, 12],
+    "dsp": {
+        "sampling_interval_ms": 200,
+        "human_override_delay_ms": 5000
+    },
+    "channels": {
+        "1": {"name": "KICK OUT", "group": "drums", "priority": "low"},
+        "2": {"name": "KICK IN", "group": "drums", "priority": "low"},
+        "3": {"name": "SNARE TOP", "group": "drums", "priority": "low"},
+        "4": {"name": "SNARE BT", "group": "drums", "priority": "low"},
+        "5": {"name": "HH", "group": "drums", "priority": "low"},
+        "6": {"name": "RACK TOM", "group": "drums", "priority": "low"},
+        "7": {"name": "FLOOR TOM", "group": "drums", "priority": "low"},
+        "8": {"name": "OH L", "group": "drums", "priority": "low"},
+        "9": {"name": "OH R", "group": "drums", "priority": "low"},
+        "10": {"name": "VIOLAO 1", "group": "band", "priority": "medium"},
+        "11": {"name": "GUITA 1", "group": "band", "priority": "medium"},
+        "12": {"name": "Guita 2", "group": "band", "priority": "medium"},
+        "13": {"name": "NORD L", "group": "band", "priority": "medium"},
+        "14": {"name": "NORD R", "group": "band", "priority": "medium"},
+        "15": {"name": "BASS", "group": "band", "priority": "medium"},
+        "16": {"name": "Defeito", "group": "ignore", "priority": "none"},
+        "17": {"name": "VOCAL 1", "group": "vocals", "priority": "high"},
+        "18": {"name": "VOCAL 2", "group": "vocals", "priority": "high"},
+        "19": {"name": "VOCAL 3", "group": "vocals", "priority": "high"},
+        "20": {"name": "VOCAL 4", "group": "vocals", "priority": "high"},
+        "21": {"name": "Teclado Rafa", "group": "band", "priority": "medium"},
+        "22": {"name": "LIVRE", "group": "ignore", "priority": "none"},
+        "23": {"name": "LIVRE", "group": "ignore", "priority": "none"},
+        "24": {"name": "KEY 2", "group": "band", "priority": "medium"},
+        "25": {"name": "CLICK", "group": "ignore", "priority": "none"},
+        "26": {"name": "TALK", "group": "ignore", "priority": "none"},
+        "27": {"name": "TALK 2", "group": "ignore", "priority": "none"},
+        "28": {"name": "SEM FIO 1", "group": "speech", "priority": "critical", "type": "source_trigger"},
+        "29": {"name": "SEM FIO 2", "group": "speech", "priority": "critical", "type": "source_trigger"},
+        "30": {"name": "SEM FIO 3", "group": "speech", "priority": "critical", "type": "source_trigger"},
+        "31": {"name": "SHURE BODY", "group": "speech", "priority": "critical", "type": "source_trigger"},
+        "32": {"name": "Defeito", "group": "ignore", "priority": "none"}
+    }
+}

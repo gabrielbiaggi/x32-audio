@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: x32_mqtt
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: unless-stopped
+
+  brain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: x32_brain
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+    depends_on:
+      - mosquitto
+    restart: unless-stopped
+    # Network mode host might be needed for OSC if running on same machine as X32 or for correct UDP routing,
+    # but for pure MQTT/Logic, bridge is fine.
+    # However, if Brain sends OSC directly (Task 3), it needs network access.
+    # If Brain sends OSC via Edge Node (Task 2), then Brain only needs MQTT.
+    # Architecture says Brain talks MQTT to Edge, Edge talks OSC to X32.
+    # So bridge network is fine.
